@@ -1,0 +1,276 @@
+<html>
+<head>
+  <title>MathJax Test</title>
+  <meta name="generator" content="BBEdit">
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<style>
+body {
+  max-width: 900px;
+  margin: auto;
+}
+</style>
+ 
+<body>
+
+<h1>High Hawaii</h1>
+<h2>Physics Concepts and Notation.  Party in your mind like it's 1889.</h2>
+
+<h1>Analytic Functions</h1>
+
+Let us define the variables that we'll be using.
+
+  $$ z = x + i y, \quad w = u + i v $$
+
+Now let us consider functions.
+
+  $$ w(z) = u(x, y) + i v(x, y) $$
+
+Let us take some derivatives.
+
+  $$ \frac{\partial w}{\partial x}
+   = \frac{\partial w}{\partial z} \frac{\partial z}{\partial x}
+   = \frac{\partial w}{\partial z}, \quad
+     \frac{\partial w}{\partial y}
+   = \frac{\partial w}{\partial z} \frac{\partial z}{\partial y}
+   = \frac{\partial w}{\partial z} i $$
+
+In order for a function to be analytics, it shouldn't matter how you take a derivative.
+
+  $$ \frac{\partial w}{\partial z}
+   = \frac{\partial w}{\partial x}
+   = - i \frac{\partial w}{\partial y} $$
+
+Seperating the real and imaginary parts.
+
+  $$ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad
+     \frac{\partial v}{\partial x} = - \frac{\partial u}{\partial y} $$
+
+If there is a first derivative with respect to both x and y, the second derivative exists.  Also, harmonic equations.
+
+  $$ \frac{\partial}{\partial y} \frac{\partial u}{\partial x}
+   = \frac{\partial^2 v}{\partial y^2}, \quad
+     \frac{\partial}{\partial x} \frac{\partial u}{\partial y}
+   = - \frac{\partial^2 v}{\partial x^2}, \quad $$
+
+  $$ \frac{\partial}{\partial y} \frac{\partial v}{\partial x}
+   = - \frac{\partial^2 u}{\partial y^2}, \quad
+     \frac{\partial}{\partial x} \frac{\partial v}{\partial y}
+   = \frac{\partial^2 u}{\partial x^2}, \quad $$
+
+The order of the partials doesn't matter.
+
+
+  $$ \frac{\partial^2 u}{\partial x \partial y}
+   = - \frac{\partial^2 v}{\partial x^2}
+   = \frac{\partial^2 v}{\partial y^2}, \quad
+     \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} = 0 $$
+
+  $$ \frac{\partial^2 v}{\partial x \partial y}
+   = \frac{\partial^2 u}{\partial x^2}
+   = - \frac{\partial^2 u}{\partial y^2}, \quad
+     \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0 $$
+
+Let's introduce a new variable.  It adds to the symmetry.
+
+  $$ z = x + i y, \quad \bar z = x - i y $$
+
+  $$ w(z, \bar z) $$
+
+  $$ \frac{\partial w}{\partial x} 
+   = \frac{\partial w}{\partial z} \frac{\partial z}{\partial x}
+   + \frac{\partial w}{\partial \bar z}  \frac{\partial \bar z}{\partial x}, \quad
+     \frac{\partial w}{\partial y} 
+   = \frac{\partial w}{\partial z} \frac{\partial z}{\partial y}
+   + \frac{\partial w}{\partial \bar z} \frac{\partial \bar z}{\partial y} $$
+
+  $$ \frac{\partial w}{\partial x} 
+   = \frac{\partial w}{\partial z}
+   + \frac{\partial w}{\partial \bar z}, \quad
+     \frac{\partial w}{\partial y} 
+   = i \frac{\partial w}{\partial z}
+   - i \frac{\partial w}{\partial \bar z} $$
+
+  $$ \frac{\partial w}{\partial z} 
+   = \frac{1}{2} \left(
+     \frac{\partial w}{\partial x}
+     -i \frac{\partial w}{\partial y} \right), \quad
+     \frac{\partial w}{\partial \bar z} 
+   = \frac{1}{2} \left(
+     \frac{\partial w}{\partial x}
+     + i \frac{\partial w}{\partial y} \right) $$
+
+This is another way to define an analytic function.
+
+  $$ \bar \partial w = 0 $$
+
+This makes is easy to see that the derivative of an analytic function is analytic.
+
+  $$ \bar \partial \partial w = \partial \bar \partial w = 0 $$
+
+By extension, one can see that analytic functions are infiniately differentaible.
+
+The sum of two analytic functions is analytic.  The product of two analytics functions is analytic.  The same is true of composition.
+
+
+<h1>Fluid Mechanics in 2D</h1>
+
+The are the equations for incompressible and irrotational flow in 2D.  Note the capital U and V because of some weird notation confusion.
+
+  $$ \frac{\partial U}{\partial x} + \frac{\partial V}{\partial y} = 0, \quad
+     \frac{\partial V}{\partial x} - \frac{\partial U}{\partial y} = 0 $$
+
+They look really close to the Riemann Cauchy equations, but a sign difference causes trouble.  These equations can be made to be garunteed to be true by introducing the velocity potential u and the stream function v.
+
+  $$ U = \frac{\partial u}{\partial x}, \quad  V = \frac{\partial u}{\partial y} $$
+  $$ U = \frac{\partial v}{\partial y}, \quad  V = - \frac{\partial v}{\partial x} $$
+
+Setting U and V equal, we get the Riemann Hilbert equations.
+
+Now let us think of the divergence and Stokes's theorem.
+
+  $$ \int \left( - V dx + U dy \right)
+   = \int \left( \frac{\partial U}{\partial x}
+   + \frac{\partial V}{\partial y} \right) dx dy $$
+
+  $$ \int \left( U dx + V dy \right)
+   = \int \left( \frac{\partial V}{\partial x}
+   - \frac{\partial U}{\partial y} \right) dx dy $$
+
+What do these equations mean and where do the come from.  There is some ugly stuff going on here.  In the end, it is the beginning.
+
+Well time to move on.  The point of this was to get the following.
+
+  $$ \oint w(z) dz = \oint (u dx - v dy) + i \oint (v dx + udy) $$
+
+For analytic functions.
+
+  $$ \oint w(z) dz = 0 $$
+
+  $$ w(z) = \frac{1}{2 \pi i} \oint \frac{w(\zeta)}{\zeta - z} d \zeta = 0 $$
+
+  $$ w^{(n)}(z) = \frac{n!}{2 \pi i} \oint \frac{w(\zeta)}{(\zeta - z)^{n+1}} d \zeta = 0,
+     \quad n = 0, 1, 2, ... $$
+
+Now let us consider Taylor expansions.  Let us expand about the point z'.  Note this is conceptually different than the z' which was a dummy variable.
+
+  $$ w(z) = c_0 + c_1 (z - z_0) + c_2 (z - z_0)^2 + ... $$
+
+  $$ c_n = \frac{w^{(n)}(z_0)}{n!} $$
+
+  $$ w(z) = \sum_{n = 0}^{\infty} \frac{w^{(n)}(z_0)}{n!} (z - z_0)^n $$
+
+What is the obvious next step to the Laurent series.  This is true.
+
+  $$ w(z) = \sum_{n = 0}^{\infty}
+     \left(\frac{1}{2 \pi i} \oint \frac{w(\zeta)}{(\zeta - z_0)^{n+1}} d \zeta
+     \right)  (z - z_0)^n $$
+
+Now for the extension.  Now we are considering non-analytic functions.
+
+  $$ f(z) = ... + \frac{c_{-2}}{(z - z_0)^2} + \frac{c_{-1}}{z - z_0}
+          + c_0 + c_1 (z - z_0) + c_2 (z - z_0)^2 + ... $$
+
+Now let us go.
+
+  $$ \oint \frac{f(z)}{(z - z_0)^m} dz = 2 \pi i c_{m-1} $$
+
+  $$ c_n = \frac{1}{2 \pi i} \oint \frac{f(\zeta)}{(\zeta - z_0)^{n+1}} d \zeta $$
+
+It would be cool to have some explanation of the notation.  Prime is bad because of it looks like a derivative.  Zeta is the Greek z.
+
+  $$ f(z) = \sum_{n = - \infty}^{\infty}
+     \left(\frac{1}{2 \pi i} \oint \frac{f(\zeta)}{(\zeta - z_0)^{n+1}} d \zeta
+     \right)  (z - z_0)^n $$
+
+This is a strange and weird extension of the Taylor series.  Now for residues.
+
+  $$ \mathrm{Res}(f(z), z_0) = \lim_{r \to 0} \frac{1}{2 \pi}
+     \int_0^{2 \pi} f(z_0 + r e^{i \theta}) r e^{i \theta} d \theta $$
+
+First order pole shortcut.
+
+  $$ \mathrm{Res}(f(z), z_0) = \lim_{z \to z_0}
+     (z - z_0) f(z) $$
+
+  $$ \mathrm{Res}(f(z), z_0) = \frac{1}{2 \pi i} \oint f(\zeta) d \zeta $$
+
+Say we have an n th order pole.
+
+  $$ \mathrm{Res}(f(z), z_0) = \frac{1}{2 \pi i} 
+     \oint \frac{(z - z_0)^n f(z)}{(z - z_0)^n} dz $$
+
+So the numerator is analytic near that point.
+
+  $$ w(z) = (z - z_0)^n f(z) $$
+
+This means we can do a Taylor expansion.  The residue is equal to just one coefficient.
+
+  $$ \mathrm{Res}(f(z), z_0) = c_{n-1} $$
+
+  $$ \mathrm{Res}(f(z), z_0) = \lim_{z \to z_0} \frac{1}{(n-1)!} 
+     \frac{\partial^{n-1}}{\partial z^{n-1}} (z - z_0)^n f(z) $$
+
+Now some applications of this theory.
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{x^2 + 1} dx = 2 \pi i \
+     \mathrm{Res} \left( \frac{1}{z^2 + 1}, i \right) = \pi $$
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{(x^2 + 1)^2} dx = 2 \pi i \
+     \mathrm{Res} \left( \frac{1}{(z^2 + 1)^2}, i \right) = \frac{\pi}{2} $$
+
+Now consider the following.
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{x^4 + 1} dx $$
+
+We've go four poles
+
+  $$ e^{i \pi / 4}, \quad e^{i 3 \pi / 4}, \quad e^{i 5 \pi / 4}, \quad e^{i 7 \pi / 4} $$
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{x^4 + 1} dx
+     = 2 \pi i \ \mathrm{Res} \left( \frac{1}{z^4 + 1},  e^{i \pi / 4} \right) 
+     + 2 \pi i \ \mathrm{Res} \left( \frac{1}{z^4 + 1},  e^{i 3 \pi / 4} \right) $$
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{x^4 + 1} dx
+     = \frac{2 \pi i}{(e^{i \pi / 4} - e^{i 3 \pi / 4})
+                      (e^{i \pi / 4} - e^{i 5 \pi / 4})
+                      (e^{i \pi / 4} - e^{i 7 \pi / 4})} 
+     + \frac{2 \pi i}{(e^{i 3 \pi / 4} - e^{i   \pi / 4})
+                      (e^{i 3 \pi / 4} - e^{i 5 \pi / 4})
+                      (e^{i 3 \pi / 4} - e^{i 7 \pi / 4})} $$
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{x^4 + 1} dx
+     = \frac{\pi}{\sqrt{2} (1+i)} 
+     + \frac{\pi}{\sqrt{2} (1-i)} $$
+
+  $$ \int_{- \infty}^{\infty} \frac{1}{x^4 + 1} dx
+     = \frac{\pi}{\sqrt{2}} $$
+
+There is a shortcut for the above problems where D is a first order zero.
+
+  $$ \mathrm{Res} \left( \frac{N(z)}{D(z)}, z_0 \right) = \frac{N(z_0)}{D'(z_0)} $$
+
+checks out with the above.  Albowitx's notation get sloppy in many places, but the book is still good.  Now for the n'th order analog.  As ususal many ways to derive this. Also, can use L'Hosipal rule too.  The higer order analog does no seem so useful.
+
+Now consider the following.
+
+  $$ \int_{- \infty}^{\infty} \frac{x^2}{x^4 + 1} dx = \frac{\pi}{\sqrt{2}} $$
+
+Now let us think of residues at infinity.
+
+  $$ \int_{-\infty}^{\infty} \frac{1}{x^{2 n} + 1} dx 
+     = \sum_{i = 1}^{n} \mathrm{Res} \left( \frac{1}{z^{2 n} + 1}, z_i \right) 
+  $$
+
+
+
+
+
+
+
+
+</body>
+</html>

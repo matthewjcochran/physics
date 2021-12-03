@@ -1,0 +1,709 @@
+<html>
+<head>
+  <title>MathJax Test</title>
+  <meta name="generator" content="BBEdit">
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<style>
+body {
+  max-width: 900px;
+  margin: auto;
+}
+</style>
+ 
+<body>
+
+<h1>High Hawaii</h1>
+<h2>Physics Concepts and Notation.  Party in your mind like it's 1889.</h2>
+
+<h1>Fluids</h1>
+
+Consider three dimensional space filled with a fluid.  At each point in space, we describe this fluid with a density that can change with time.
+
+  $$ \rho(t, x, y, x) $$
+
+Simalirity, we describe the three components of the velocity of the fuild
+  
+  $$ u(t, x, y, x), \quad
+     v(t, x, y, x), \quad
+     w(t, x, y, x)$$
+
+Now imagine a small box.  The mass flux through the front face is
+
+  $$ -\rho ( x + \frac{1}{2} \Delta x, y, z ) \
+       u ( x + \frac{1}{2} \Delta x, y, z ) \Delta y \Delta z $$
+
+Assuming that the box is very small, that flux is approximately equal to 
+
+  $$ \approx
+   - \left( \rho + \frac{1}{2} \frac{\partial \rho}{\partial x} \Delta x \right) 
+     \left( u + \frac{1}{2} \frac{\partial u}{\partial x} \Delta x \right)
+     \Delta y \Delta z $$
+
+  $$ \approx 
+   - \left( \rho u + \frac{1}{2} \frac{\partial}{\partial x} \rho u \Delta x \right)
+     \Delta y \Delta z $$
+
+  $$ \approx 
+   - \rho u \Delta y \Delta z
+   - \left( \frac{1}{2} \frac{\partial}{\partial x} \rho u \right)
+     \Delta x \Delta y \Delta z $$
+
+
+Exercise:  Show that the net flux throught all six sides of the cube is
+
+  $$ \Phi \approx - \left(
+     \frac{\partial}{\partial x} \rho u 
+   + \frac{\partial}{\partial y} \rho v 
+   + \frac{\partial}{\partial z} \rho w 
+     \right) \Delta x \Delta y \Delta z $$
+
+The change in mass of the fluid in the block should equal the mass flux into the box.
+
+  $$ \frac{\partial \rho}{\partial t} \Delta x \Delta y \Delta z = \Phi $$
+
+With some algebra, we arrive at the continuity equation.
+
+  $$ \frac{\partial}{\partial t} \rho
+   + \frac{\partial}{\partial x} \rho u 
+   + \frac{\partial}{\partial y} \rho v 
+   + \frac{\partial}{\partial z} \rho w = 0 $$
+
+We could perform a similar derivaton except with the three components of momentum flux when now we can also have an external source of momentum due to force.
+
+  $$ \frac{\partial}{\partial t} \rho u
+   + \frac{\partial}{\partial x} \rho u u 
+   + \frac{\partial}{\partial y} \rho u v 
+   + \frac{\partial}{\partial z} \rho u w = f $$
+
+  $$ \frac{\partial}{\partial t} \rho v
+   + \frac{\partial}{\partial x} \rho v u 
+   + \frac{\partial}{\partial y} \rho v v 
+   + \frac{\partial}{\partial z} \rho v w = g $$
+
+  $$ \frac{\partial}{\partial t} \rho w
+   + \frac{\partial}{\partial x} \rho w u 
+   + \frac{\partial}{\partial y} \rho w v 
+   + \frac{\partial}{\partial z} \rho w w = h $$
+
+Exercise: Using the continuity equation, show these equations can be written as
+
+  $$ \rho \left(
+     \frac{\partial u}{\partial t}
+   + u \frac{\partial u}{\partial x}
+   + v \frac{\partial u}{\partial y}
+   + w \frac{\partial u}{\partial z} \right) = f $$
+
+  $$ \rho \left(
+     \frac{\partial v}{\partial t}
+   + u \frac{\partial v}{\partial x}
+   + v \frac{\partial v}{\partial y}
+   + w \frac{\partial v}{\partial z} \right) = g $$
+
+  $$ \rho \left(
+     \frac{\partial w}{\partial t}
+   + u \frac{\partial w}{\partial x}
+   + v \frac{\partial w}{\partial y}
+   + w \frac{\partial w}{\partial z} \right) = h $$
+
+Exercise:  Force is pressure times area.  By considering the six size of the box, show
+
+  $$ f = - \frac{\partial p}{\partial x}, \quad
+     g = - \frac{\partial p}{\partial y}, \quad
+     h = - \frac{\partial p}{\partial z} $$
+
+Now consider viscosity.  The front face will consider two forces.
+
+  $$ G = \mu \frac{\partial v}{\partial x} \Delta y \Delta z, \quad
+     H = \mu \frac{\partial w}{\partial x} \Delta y \Delta z $$
+
+
+<h1>Motivation for The Dirac Equation</h1> 
+
+<p>
+The time evolution of the wave function of a particle is given by the time-dependent Schroedinger equation.
+
+  $$i \hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi$$
+
+The Hamiltonian operator is the classical Hamiltonian with its positions and momentum variables replaced by position and momentum operators.
+
+  $$ \hat{q_x} = x, \dots \quad
+     \hat{p_x} = \frac{\hbar}{i} \frac{\partial}{\partial x}, \dots$$
+
+Exercise: In classical mechanics, the Hamiltonian for a free particle is
+
+  $$H = \frac{1}{2m} (p_x^2 + p_y^2 + p_z^2)$$
+
+
+Show that this leads to the wave equation
+
+  $$i \hbar \frac{\partial \psi}{\partial t}
+      = \frac{-\hbar^2}{2m} \left(
+        \frac{\partial^2}{\partial x^2} 
+      + \frac{\partial^2}{\partial y^2}
+      + \frac{\partial^2}{\partial z^2} \right) \psi$$
+
+The Hamiltonian for a relitvistic particle is given by
+
+  $$ H = \sqrt{m^2 c^4 + p_x^2 c^2 + p_y^2 c^2 + p_z^2 c^2} $$
+
+The radical makes the transition to quantum mechanics difficult.  Hence, Dirac introduced a differnt Hamiltonian with alpha matrices.
+
+  $$ H = \alpha_0 m c^2 + \alpha_1 p_x c + \alpha_2 p_y c + \alpha_3 p_z c $$
+
+These matricies are chosen such that
+
+  $$ H^2 = m^2 c^4 + p_x^2 c^2 + p_y^2 c^2 + p_z^2 c^2 $$
+
+Exercise:  Show that
+
+  $$ \alpha_a \alpha_b + \alpha_b \alpha_a = 2 \delta_{ab} $$
+
+To find a representation for these matricies, Dirac introduced six auxiliary matricies, each four by four.  We write them as two by two matrices of two by two matrices.
+
+  $$ \sigma_1 = \begin{pmatrix}
+     \sigma_1 & 0 \\
+     0 & \sigma_1 \end{pmatrix}, \quad
+     \sigma_2 = \begin{pmatrix}
+     \sigma_2 & 0 \\
+     0 & \sigma_2 \end{pmatrix}, \quad
+     \sigma_3 = \begin{pmatrix}
+     \sigma_3 & 0 \\
+     0 & \sigma_3 \end{pmatrix} $$ 
+
+  $$ \rho_1 = \begin{pmatrix}
+     0 & 1 \\
+     1 & 0 \end{pmatrix}, \quad
+     \rho_2 = \begin{pmatrix}
+     0 &-i \\
+     i & 0 \end{pmatrix}, \quad
+     \rho_3 = \begin{pmatrix}
+     1 & 0 \\
+     0 &-1 \end{pmatrix} $$ 
+
+Exercise: Show these new sigma matrices obey the same relations ship as the pauli matrices.
+
+  $$ \sigma_1^2 = \sigma_2^2 = \sigma_3^2 = 1, \quad
+     \sigma_1 \sigma_2 \sigma_3 = i $$
+
+  $$ \sigma_a \sigma_b + \sigma_b \sigma_a = 2 \delta_{ab} $$
+
+Exercise: Show these new rho matrices obey the same relations ship as the pauli matrices.
+
+  $$ \rho_1^2 = \rho_2^2 = \rho_3^2 = 1, \quad
+     \rho_1 \rho_2 \rho_3 = i $$
+
+  $$ \rho_a \rho_b + \rho_b \rho_a = 2 \delta_{ab} $$
+
+Exercise: Show that the sigma and rho matrices commute.
+
+  $$ \sigma_a \rho_b = \rho_b \sigma_a $$
+
+Exercise: Show that one possible representation of the alpha matrices is
+
+  $$ \alpha_0 = \rho_3, \quad 
+     \alpha_1 = \rho_0 \sigma_1, \quad
+     \alpha_2 = \rho_0 \sigma_2, \quad 
+     \alpha_3 = \rho_0 \sigma_2  $$
+
+That is, show that they anticommute.
+
+Exercise: Show that the wave equation for a relitivistic particle is
+
+  $$i \hbar \left(
+  \frac{1}{c} \frac{\partial}{\partial t}
+  + \alpha_1 \frac{\partial}{\partial x} 
+  + \alpha_2 \frac{\partial}{\partial y}
+  + \alpha_3 \frac{\partial}{\partial z} \right) \psi
+  = \alpha_0 m c \psi $$
+
+Exercise: Show that this equaton can be rewritten at
+
+  $$i \hbar \left(
+    \gamma^0 \frac{1}{c} \frac{\partial}{\partial t}
+  + \gamma^1 \frac{\partial}{\partial x} 
+  + \gamma^2 \frac{\partial}{\partial y}
+  + \gamma^3 \frac{\partial}{\partial z} \right) \psi
+  - mc \psi
+  = 0 $$
+
+where
+
+  $$ \gamma^0 = \begin{pmatrix}
+     1 & 0 \\
+     0 &-1 \end{pmatrix}, \quad
+     \gamma^a = \begin{pmatrix}
+     0 & \sigma_a  \\
+     -\sigma_a & 0 \end{pmatrix} $$ 
+
+This is the standard form of the Dirac equation found in many texts.  It is also called they Weyl or chiral representation.  In more compact notation. 
+
+  $$\left(i \hbar \gamma^\alpha \partial_\alpha - mc \right) \psi
+  = 0 $$
+</p>
+
+The transpose conjugate of this equation is, going back to the long form
+
+  $$- i \hbar \psi^\dagger\left(
+    \gamma^{0\dagger} \frac{1}{c} \frac{\partial}{\partial t}
+  + \gamma^{1\dagger} \frac{\partial}{\partial x} 
+  + \gamma^{2\dagger} \frac{\partial}{\partial y}
+  + \gamma^{3\dagger} \frac{\partial}{\partial z} \right)
+  - \psi^\dagger mc 
+  = 0 $$
+
+Exercies:  Show the following
+
+  $$ \sigma^{a \dagger} = \sigma^a $$
+
+  $$ \gamma^{0 \dagger} = \gamma^0, \quad \gamma^{a \dagger} = - \gamma^a $$
+
+So we have 
+
+  $$- i \hbar \psi^\dagger\left(
+    \gamma^0 \frac{1}{c} \frac{\partial}{\partial t}
+  - \gamma^1 \frac{\partial}{\partial x} 
+  - \gamma^2 \frac{\partial}{\partial y}
+  - \gamma^3 \frac{\partial}{\partial z} \right)
+  - \psi^\dagger mc 
+  = 0 $$
+
+Exercise: Show the following
+
+  $$ \gamma^\alpha \gamma^\beta + \gamma^\beta \gamma^\alpha = g^{\alpha \beta}$$
+
+Exercise: Show the following
+
+  $$i \hbar \psi^\dagger \gamma^0 \left(
+    \gamma^0 \frac{1}{c} \frac{\partial}{\partial t}
+  + \gamma^1 \frac{\partial}{\partial x} 
+  + \gamma^2 \frac{\partial}{\partial y}
+  + \gamma^3 \frac{\partial}{\partial z} \right)
+  + \psi^\dagger \gamma^0 mc 
+  = 0 $$
+
+This can be written as
+
+  $$\bar\psi \left( i \hbar \gamma^\alpha \partial_\alpha + mc \right)
+  = 0 $$
+
+where
+
+  $$\bar\psi = \psi^\dagger \gamma_0 $$
+
+You might thing of it as that the entire point of introducing the psi bar is to keep the form of the Dirac equation the same for Hermittian conjugate.
+
+
+The probabilty density is given by
+
+  $$ \psi^\dagger \psi = \bar\psi \gamma^0 \psi $$
+
+Since the following holds
+
+  $$ \partial_\alpha (\bar\psi \gamma^\alpha \psi) = 0 $$
+
+It is suggested that we define a new Dirac current.
+
+  $$ J^\alpha = e \bar\psi \gamma^\alpha \psi $$
+
+
+
+
+<h1>Harmonic Oscillator in 1D</h1>
+
+The classical Hamiltonian for a one dimensional harmonic oscillator is given by
+
+  $$ H = \frac{1}{2 m} (p^2 + m^2 \omega^2 q^2) $$
+
+Exercise:  Show that this leads to the wave equation
+
+
+  $$ i \hbar \frac{\partial \psi}{\partial t} 
+     = \left( -\frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2}
+     + \frac{1}{2} m \omega^2 x^2 \right) \psi $$
+
+Exercise: In trying to factor the Hamiltonina, one might consider the term and show the following.
+
+  $$ \frac{1}{2 m} (p + i m \omega q)(p - i m \omega q) = H - \frac{1}{2} \hbar \omega$$
+
+Since the momentum operators will be divided by imaginary we write
+
+  $$ \frac{1}{2 m} (- i p + m \omega q)(i p + m \omega q) = H - \frac{1}{2} \hbar \omega$$
+
+With the idea of making things unitless.
+
+  $$ \hbar \omega \frac{(- i p + m \omega q)(i p + m \omega q)}{2 m \hbar \omega}
+     = H - \frac{1}{2} \hbar \omega $$
+
+We define raising and lowering operators.
+
+  $$ a^\dagger = \frac{-i p + m \omega q}{\sqrt{2m \hbar \omega}}, \quad
+     a = \frac{i p + m \omega q}{\sqrt{2m \hbar \omega}} $$
+
+Exercise:  Show the following
+
+  $$ H = \left( a^\dagger a + \frac{1}{2} \right) \hbar \omega, \quad
+     H = \left( a a^\dagger - \frac{1}{2} \right) \hbar \omega $$
+
+Exercise: Show the following.
+
+  $$ [a, a^\dagger] = 1, \quad
+     [a, a] = 0, \quad
+     [a^\dagger, a^\dagger] = 0 $$
+
+Exercise:  Show the following.
+
+  $$ [H, a^\dagger] = \hbar \omega a^\dagger , \quad
+     [H, a] = - \hbar \omega a $$
+
+The Hamiltonian finds energy eigenvalues of eigenstates.
+
+  $$ H \psi_n = E_n \psi_n $$
+
+Show the following.
+
+  $$ H a^\dagger \psi_n = (E_n + \hbar \omega) a^\dagger \psi_n, \quad 
+     H a \psi_n = (E_n - \hbar \omega) a \psi_n $$
+
+If we make the following assumtions about the energy levels
+
+  $$ E_{n+1} = E_n + \hbar \omega $$
+
+Suggest the raising and lowering operators.  At this point, we can't be sure that they keep the eigenstates normalized.
+
+  $$ \psi_{n+1} \propto a^\dagger \psi_n, \quad
+     \psi_{n-1} \propto a \psi_n $$ 
+
+Assume that there is a lowest state.
+
+  $$ a \psi_0 = 0 $$
+
+Exercise:  Show
+
+  $$ E_0 = \frac{1}{2} \hbar \omega $$
+
+  $$ \left( \hbar \frac{\partial}{\partial x} + m \omega x \right) \psi_0 = 0 $$
+
+    
+
+  $$ \psi_0 = \left( \frac{\pi \hbar}{m \omega} \right)^{1/4}
+     \exp \left( - \frac{m \omega}{2 \hbar} x^2 \right) $$
+
+Now we consider higher eigenstates.  One can argue
+
+  $$ E_n = \left( n + \frac{1}{2} \right) \hbar \omega $$
+
+Now we look for exact constants.
+
+  $$ \psi_{n+1} = C_n^+ a^\dagger \psi_n, \quad
+     \psi_{n-1} = C_n^- a \psi_n $$ 
+
+This should lead us to consider some new combinations.
+
+Exercise: Show
+
+  $$ a^\dagger a \psi_n = n \psi_n, \quad
+     a a^\dagger \psi_n = (n + 1) \psi_n $$
+
+
+  $$ C_n^+ = \frac{1}{\sqrt{n+1}}, \quad
+     C_n^- = \frac{1}{\sqrt{n}} $$ 
+
+Argue the following
+
+  $$ \psi_n = \frac{a^\dagger}{\sqrt{n}} \psi_{n-1} $$
+
+  $$ \psi_n = \frac{(a^\dagger)^n}{\sqrt{n!}} \psi_0 $$
+
+The form of the ground state suggetst that we rewrite our ladder operators.
+
+  $$ a^\dagger = \sqrt{\frac{m \omega}{2 \hbar}}
+     \left( q - \frac{i p }{m \omega}\right), \quad
+     a = \sqrt{\frac{m \omega}{2 \hbar}}
+     \left( q + \frac{i p }{m \omega}\right) $$
+
+So we can write
+
+  $$ \psi_n = \left( \frac{\pi \hbar}{m \omega} \right)^{1/4}
+     \frac{1}{\sqrt{n!}} \left( \frac{m \omega}{2 \hbar} \right) ^{n/2}
+     \left( x - \frac{\hbar }{m \omega} \frac{\partial}{\partial x} \right)^n
+     \exp \left( - \frac{m \omega}{2 \hbar} x^2 \right) $$
+
+Probably lots more interesting math that we could go into here if necessary.
+
+  $$ \psi_n = 
+     \sqrt{\frac{1}{n!} \sqrt{\frac{\pi}{2} \frac{2 \hbar}{m \omega}}}
+     \left( \sqrt{\frac{m \omega}{2 \hbar}} x
+     - \frac{1}{2} \sqrt{\frac{2 \hbar}{m \omega}}\frac{\partial}{\partial x} \right)^n
+     \exp \left( - \frac{m \omega}{2 \hbar} x^2 \right) $$
+
+
+<h1>Bra and Ket notation</h1>
+
+This is just a notational change
+
+  $$ \langle x | n \rangle = \psi_n(x), \quad
+     \langle n | x \rangle = \psi_n^\dagger(x) $$
+
+Remembering the fourier transform.
+
+  $$\phi_n(k) = \int e^{-ikx} \psi_n(x) dx, \quad
+    \psi_n(x) = \frac{1}{2 \pi} \int e^{ikx} \phi_n(k) dk $$
+
+Changing to momentum.
+
+  $$\phi_n(p) = \int e^{-ipx / \hbar} \psi_n(x) dx, \quad
+    \psi_n(x) = \frac{1}{2 \pi \hbar} \int e^{ipx / \hbar} \phi_n(p) dk $$
+
+Or with math.
+
+  $$ \frac{\phi_n(p)}{\sqrt{2 \pi \hbar}}
+     = \int \frac{e^{-ipx / \hbar}}{\sqrt{2 \pi \hbar}}
+       \psi_n(x) dx, \quad
+     \psi_n(x)
+      = \int \frac{e^{ipx / \hbar}}{\sqrt{2 \pi \hbar}}
+        \frac{\phi_n(p)}{\sqrt{2 \pi \hbar}} dp $$
+
+Symmetry suggests that we redefine phi.  Also, this makes it unitless when integrated with respect to momentum.
+
+  $$ \phi_n(p)
+     = \int \frac{e^{-ipx / \hbar}}{\sqrt{2 \pi \hbar}}
+       \psi_n(x) dx, \quad
+     \psi_n(x)
+      = \int \frac{e^{ipx / \hbar}}{\sqrt{2 \pi \hbar}}
+        \phi_n(p) dp $$
+
+In more compact notation, we can write
+
+  $$ \langle p | n \rangle = \int \langle p | x \rangle \langle x | n \rangle dx, \quad
+     \langle x | n \rangle = \int \langle x | p \rangle \langle p | n \rangle dp $$
+
+where
+
+  $$ \langle x | n \rangle = \phi_n(p), \quad
+     \langle x | p \rangle = \frac{e^{ipx / \hbar}}{\sqrt{2 \pi \hbar}} $$
+
+<h1>Levi-Civita Symbol</h1>
+
+One can write the cross product using this symbol.
+
+  $$ \vec c = \vec a \times \vec b $$
+
+  $$ \vec c = \hat x_i \epsilon_{ijk} a_j b_k $$
+
+We can use this to calculate some relatively complicated identites.
+
+  $$ \vec a \times (\vec b \times \vec c)
+     = \hat x_i \epsilon_{ijk} a_j (\epsilon_{klm} b_l c_m) $$
+
+  $$ = \hat x_i \epsilon_{kij} \epsilon_{klm} a_j b_l c_m $$
+
+  $$ = \hat x_i (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) a_j b_l c_m $$
+
+  $$ = \hat x_i a_j b_i c_j - \hat x_i a_j b_j c_i $$
+
+  $$ = \vec b (\vec a \cdot \vec c) - \vec c (\vec a \cdot \vec b) $$
+
+
+Exercise: Show the following.
+
+  $$ \vec \nabla \times (\vec \nabla \times \vec A)
+     = \vec \nabla (\vec \nabla \cdot \vec A)
+     - \nabla^2 \vec A $$
+
+
+
+Exercise: Show the following where we assume the potential is a function of position and the position a function of time.
+
+  $$ \dot{\vec q} \times (\vec \nabla \times \vec A)
+     = \vec \nabla (\dot{\vec q} \cdot \vec A)
+     - (\dot{\vec q} \cdot \vec \nabla) \vec A $$
+
+<h1>The Lorentz Force Law</h1>
+
+  $$ \frac{d}{d t} (m \dot{\vec q})
+    = e \left( \vec E + \dot{\vec q} \times \vec B \right) $$
+
+Changing the fields into potentials.
+
+
+  $$ \frac{d}{d t} (m \dot{\vec q}) = e \left(
+    - \vec \nabla \phi - \frac{\partial \vec A}{\partial t}
+    + \dot{\vec q} \times (\vec \nabla \times \vec A) \right) $$
+
+Exercise: Show using above problmes.
+
+  $$ \frac{d}{d t} (m \dot{\vec q} + e \vec A)
+    = - e \vec \nabla \left(\phi - \dot{\vec q} \cdot \vec A \right) $$
+
+These equations result from the lagrangian.
+
+  $$ L = \frac{1}{2} m \dot{\vec q}^2
+     - e \left(\phi - \dot{\vec q} \cdot \vec A \right) $$
+
+Exercise: Show the following.
+
+  $$ \vec p = \frac{\partial L}{\partial \dot{\vec q}} = m \dot{\vec q} + e \vec A $$
+
+  $$ H = \vec p \cdot \dot{\vec q} - L = \frac{1}{2 m} (\vec p - e \vec A)^2 + e \phi $$
+
+
+
+<h1>Maxwell's Equations</h1>
+
+Here they are in SI units.
+
+  $$ \vec E = - \vec \nabla \phi - \partial_t \vec A $$
+  $$ \vec B = \vec \nabla \times \vec A $$
+  $$ \vec \nabla \cdot \vec E = \frac{\rho}{\epsilon_0} $$
+  $$ \vec \nabla \times \vec B = \mu_0 \vec J + \frac{1}{c^2} \partial_t \vec E $$
+
+Exercise:  Show that the first two equations imply the following.
+
+  $$ \vec \nabla \times \vec E = - \partial_t \vec B $$
+  $$ \vec \nabla \cdot \vec B = 0 $$
+
+Exercise:  Show that the first two equations imply the following.
+
+  $$ \partial_t \rho + \vec \nabla \cdot \vec J = 0 $$
+
+Plugging the first two equations into the second two, you get the following.
+
+  $$ \frac{1}{c^2} \partial_t^2 \phi - \nabla^2 \phi - \partial_t \left( \frac{1}{c^2} \partial_t \phi + \vec \nabla \cdot \vec A \right) = \frac{\rho}{\epsilon_0}$$
+  $$ \frac{1}{c^2} \partial_t^2 \vec A - \nabla^2 \vec A + \vec \nabla \left( \frac{1}{c^2} \partial_t \phi + \vec \nabla \cdot \vec A \right) = \mu_0 \vec J $$
+
+These equations suggest the Lorentz gauge.
+
+Now introduce the four vectors.  The theme is to keep the spacial components the same and adjust the time component to that it has the same unit.
+
+  $$ \partial_\alpha = (\frac{1}{c} \partial_t, \vec \nabla) $$
+  $$ J^\alpha = (c \rho, \vec J) $$
+  $$ A^\alpha = (\frac{1}{c} \phi, \vec A) $$
+
+These four vecotr allow us to write the continuity equatio and the Lorentz gauge in compact forms.
+
+  $$ \partial_\alpha J^\alpha = 0 $$
+  $$ \partial_\alpha A^\alpha = 0 $$
+
+We also have this.
+
+  $$ (\partial_\beta \partial^\beta) A^\alpha - \partial^\alpha (\partial_\beta A^\beta) = \mu_0 J^\alpha $$
+
+Define the field function for four vectors.
+
+  $$ F^{\alpha\beta} = \partial^\alpha A^\beta - \partial^\beta A^\alpha $$
+
+Let's do a space time split.
+
+  $$ F^{00} = 0 $$
+
+  $$ F^{0 1} = \partial^0 A^1 - \partial^1 A^0
+             = \frac{1}{c}\partial_t A_x + \partial_x \frac{\phi}{c}
+             = - \frac{E_x}{c} $$
+
+  $$ F^{12} = \partial^1 A^2 - \partial^2 A^1
+            = - \partial_x A_y + \partial_y A_x
+            = - B_z $$
+
+By analogy we get the rest.
+
+
+\begin{pmatrix}
+    F^{00} & F^{01} & F^{02} & F^{03} \\
+    F^{10} & F^{11} & F^{12} & F^{13} \\
+    F^{20} & F^{21} & F^{22} & F^{23} \\
+    F^{30} & F^{31} & F^{32} & F^{33} \\
+\end{pmatrix}
+
+This is equal to the following.
+
+\begin{pmatrix}
+    0 & -E_x / c & -E_y / c & -E_z / c \\
+    E_x / c & 0 & -B_z & B_y \\
+    E_y / c & B_z & 0 & -B_x \\
+    E_z / c & -B_y & B_x & 0 \\
+\end{pmatrix}
+
+The unusual negatives especially for the Bs are due to the four vector spatial notation.  In vector notatio, we have the more compact forms.
+
+  $$ \vec E = \hat x_a F^{a0}, \quad \vec B = - \frac{1}{2} \hat x_a \epsilon_{abc} F^{bc} $$
+
+Plugging into the first two equations.
+
+  $$ \partial_a F^{a0} = c \mu_0 \rho, \quad
+     \partial_b F^{ba} = \mu_0 J^a + \partial_0 F^{a0} $$
+
+Taking it to the next step.
+
+  $$ \partial_\beta F^{\beta 0} = \mu_0 J^0, \quad
+     \partial_b F^{ba} + \partial_0 F^{0a} = \mu_0 J^a $$
+
+And these are equal to the following.
+
+  $$ \partial_\beta F^{\beta \alpha} = \mu_0 J^\alpha $$
+
+That's nice.
+
+  $$ \frac{1}{2 \mu_0} \left( \frac{E^2}{c^2} - B^2 \right)
+     = - \frac{1}{4 \mu_0} F^{\alpha \beta} F_{\alpha \beta} $$
+
+So the Lagrangian density is the following.
+
+  $$ \mathcal{L} = - \frac{1}{4 \mu_0} F_{\alpha \beta} F^{\alpha \beta}
+         - A_\alpha J^\alpha $$
+
+Plug it into the equation.
+
+  $$ \frac{\partial \mathcal{L}}{\partial A_\mu} 
+     - \partial_\nu \frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)}
+     = 0 $$
+
+  $$ \frac{\partial \mathcal{L}}{\partial A_\mu} = - \delta^\mu_\alpha J^\alpha = - J^\mu $$
+
+  $$ \frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)}
+     = - \frac{1}{4 \mu_0} \frac{\partial}{\partial (\partial_\nu A_\mu)}
+     g^{\alpha \gamma} g^{\beta \delta} F_{\alpha \beta} F_{\gamma \delta} $$
+
+  $$ = - \frac{1}{4 \mu_0} g^{\alpha \gamma} g^{\beta \delta}
+       \left(
+       \frac{\partial F_{\alpha \beta}}{\partial (\partial_\nu A_\mu)} F_{\gamma \delta}
+     + \frac{\partial F_{\gamma \delta}}{\partial (\partial_\nu A_\mu)} F_{\alpha \beta}
+       \right)$$
+
+  $$ = - \frac{1}{4 \mu_0} g^{\alpha \gamma} g^{\beta \delta}
+       \left(
+       (\delta^\nu_\alpha \delta^\mu_\beta - \delta^\nu_\beta \delta^\mu_\alpha)
+       F_{\gamma \delta}
+     + (\delta^\nu_\gamma \delta^\mu_\delta - \delta^\nu_\delta \delta^\mu_\gamma)
+       F_{\alpha \beta}
+       \right)$$
+
+  $$ = - \frac{1}{4 \mu_0} 
+       \left(
+       (g^{\nu \gamma} g^{\mu \delta} - g^{\mu \gamma} g^{\nu \delta})
+       F_{\gamma \delta}
+     + (g^{\alpha \nu} g^{\beta \mu} - g^{\alpha \mu} g^{\beta \nu})
+       F_{\alpha \beta}
+       \right)$$
+
+  $$ = - \frac{1}{4 \mu_0} 
+       \left( F^{\nu \mu} - F^{\mu \nu} + F^{\nu \mu} - F^{\mu \nu} \right)$$
+
+  $$ = - \frac{1}{\mu_0} F^{\nu \mu} $$
+
+Putting it all togehter.
+
+  $$ - J^\mu + \frac{1}{\mu_0} \partial_\nu F^{\nu \mu} = 0 $$
+
+
+
+
+
+
+
+
+</body>
+</html>

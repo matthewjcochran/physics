@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>MathJax Test</title>
+  <meta name="generator" content="BBEdit">
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<style>
+body {
+  max-width: 900px;
+  margin: auto;
+}
+</style>
+ 
+<body>
+
+<h1>High Hawaii</h1>
+<h2>Physics Concepts and Notation.  Party in your mind like it's 1889.</h2>
+
+<h1>Analytic Functions</h1>
+
+$$ \frac{\partial^2 u}{\partial x^2} 
+   - \frac{1}{c^2} \frac{\partial^2 u}{\partial t^2} 
+   = \left( \frac{M c}{\hbar} \right)^2 \sin(u) 
+$$
+
+or
+
+$$ \frac{\partial^2 u}{\partial t^2}
+   - c^2 \frac{\partial^2 u}{\partial x^2} 
+   - \left( \frac{M c^2}{\hbar} \right)^2 \sin(u) = 0 
+$$
+
+$$ u = 4 \arctan \left(
+       \frac{\sqrt{M^2 - m^2}}{m}
+       \frac{\sin \left( \frac{mc^2}{\hbar} t \right)}
+            {\cosh\left( \frac{\sqrt{M^2 - m^2}\ c}{\hbar} x \right)}
+       \right) $$
+
+or
+
+$$ u = 4 \arctan \left(
+       \frac{\sqrt{M^2 - m^2}}{m}
+       \sin \left( \frac{m c^2}{\hbar} t \right)
+       \ \textrm{sech}\left( \frac{\sqrt{M^2 - m^2}\ c}{\hbar} x \right)
+       \right) $$
+or
+$$ u = 4 \arctan \left(
+       \frac{\sqrt{M^2 - m^2} \sin \left( \frac{mc^2}{\hbar} t \right)}
+            {m \cosh\left( \frac{\sqrt{M^2 - m^2}\ c}{\hbar} x \right)}
+       \right) $$
+
+Now for the Lagrangian density.
+
+$$ L = \frac{h}{c} \left( 
+       \frac{  1}{2} \left( \frac{\partial u}{\partial t} \right)^2
+     - \frac{c^2}{2} \left( \frac{\partial u}{\partial x} \right)^2
+     - \left( \frac{M c^2}{\hbar} \right)^2 (1 - \cos(u))\right) $$
+
+Introducing the plank mass.
+
+$$ \mathcal{L} = \frac{h}{2 c} \left( \frac{\partial u}{\partial t} \right)^2
+     - \frac{h c}{2} \left( \frac{\partial u}{\partial x} \right)^2
+     - \frac{c^4}{G} (1 - \cos u ) $$
+
+<h2> Let us restart </h2>
+
+Consider the Lagrangian density.  It's nice because the dynamics seem related to plancks's constant and Newton's gravitation constant seems related to the dynamics.  Plus, there is no arbitrary mass to include from the beginning. It has units of energy which is good.
+
+$$ \mathcal{L} =
+   \frac{\hbar}{2 c} \left(\frac{\partial \phi}{\partial t} \right)^2
+ - \frac{\hbar c}{2} \left(\frac{\partial \phi}{\partial x} \right)^2
+ - \frac{c^4}{G} (1 - \cos \phi) $$
+
+It leads to the equation of motion.  Defining the Planck mass, we can rewrite this equation.
+
+$$ m_p = \sqrt{\frac{\hbar c}{G}} $$
+
+$$ \frac{\partial^2 \phi}{\partial x^2}
+ - \frac{1}{c^2} \frac{\partial^2 \phi}{\partial t^2}
+ = \left( \frac{m_p c}{\hbar} \right)^2 \sin \phi $$
+
+This is very similar to the Klein Gordon equation.  In the limit of small angles, it is the same.
+
+$$ \phi = 4 \arctan \left(
+   \frac{\sqrt{m_p^2 - m^2} \sin \left(\frac{mc^2}{\hbar} t \right)}
+        {m \cosh\left( \frac{\sqrt{m_p^2 - m^2}\ c}{\hbar} x \right)}
+   \right) $$
+
+For all particle masses we can make the following approximation.
+
+$$ \phi = 4 \arctan \left(
+   \frac{m_p \sin \left(\frac{m c^2}{\hbar} t \right)}
+        {m \cosh\left( \frac{m_p c}{\hbar} x \right)}
+   \right) $$
+
+Thinking ahead, there might be a problem with the constant pi especally starting witht the Lagrangian density.  The particle have the size of the plank length which is esentailly a point particle consistent with all experimental measurements.
+
+
+</body>
+</html>
